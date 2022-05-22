@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carosello News</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+   <div id="app"class="container">
+        <div  class="items">
+            <div class="item active">
+                <img :src="images[index].src" alt="">
+                <div class="text">
+                    <h3>{{images[index].title}}</h3>
+                    <p>{{images[index].text}}</p>
+                </div>
+            </div>      
+           
+        </div>
+        <div class="thumbs">
+            <div class="thumbs" @mouseover="stop()" @mouseleave="start()">
+                <div class="prev" @click="up()"></div>
+
+                <div class="thumb" v-for="(image, Index) in images" :class="{'active' : index === Index}" @click="selectedImage(index)">
+                    <img :src="image.src">
+                </div> 
+                <div class="next" @click="down()"></div>
+            </div>
+        </div>       
+            <div class="next"></div>
+        </div>
+   </div>
+
+   <script src="js/main.js"></script>
+</body>
+</html>
