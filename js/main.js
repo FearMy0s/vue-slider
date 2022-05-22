@@ -42,7 +42,7 @@ methods: {
         clearInterval(this.intervalID);
     },
     up() {
-        this.index === 0 ? this.currentIndex = this.images.length - 1  : this.index--;
+        this.index === 0 ? this.index = this.images.length - 1  : this.index--;
     },
     down() {
         this.index === this.images.length - 1 ? this.index = 0  : this.index++;
