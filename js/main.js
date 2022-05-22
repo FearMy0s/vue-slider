@@ -33,7 +33,7 @@ const app = new Vue ({
 ],
 },
 methods: {
-    startInterval() {
+    start() {
         this.intervalID = setInterval(() => {
             this.down();
         }, 3000);    
@@ -52,10 +52,10 @@ methods: {
     }
 },
 mounted() {
-    this.startInterval();
+    this.start();
 },
 beforeDestroy() {
-    this.stopInterval();
+    this.stop();
 }
 });
 
