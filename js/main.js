@@ -42,10 +42,17 @@ methods: {
         clearInterval(this.intervalID);
     },
     up() {
-        this.index === 0 ? this.index = this.images.length - 1  : this.index--;
+        if (this.index===0)
+        {this.index=this.images.lenght-1;
+        } else {this.index--;
+        }
     },
     down() {
-        this.index === this.images.length - 1 ? this.index = 0  : this.index++;
+        if(this.index===this.images.lenght-1){
+            this.index=0;
+        } else {
+            this.index++
+        }
     },
     selectedImage(Index) {
         this.index = Index;
