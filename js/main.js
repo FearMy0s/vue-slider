@@ -42,8 +42,8 @@ methods: {
         clearInterval(this.intervalID);
     },
     up() {
-        if (this.index===0)
-        {this.index=this.images.lenght-1;
+        if (this.index===0){
+            this.index=this.images.lenght-1;
         } else {this.index--;
         }
     },
