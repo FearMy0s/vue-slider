@@ -33,6 +33,13 @@ const app = new Vue ({
 ],
 },
 methods: {
+    up() {
+        this.index === 0 ? this.currentIndex = this.images.length - 1  : this.index--;
+        this.index === 0 ? this.index = this.images.length - 1  : this.index--;
+    },
+    down() {
+        this.index === this.images.length - 1 ? this.index = 0  : this.index++;
+    },
     start() {
         this.intervalID = setInterval(() => {
             this.down();
@@ -40,19 +47,6 @@ methods: {
     },
     stop() {
         clearInterval(this.intervalID);
-    },
-    up() {
-        if (this.index===0){
-            this.index=this.images.lenght-1;
-        } else {this.index--;
-        }
-    },
-    down() {
-        if(this.index===this.images.lenght-1){
-            this.index=0;
-        } else {
-            this.index++
-        }
     },
     selectedImage(Index) {
         this.index = Index;

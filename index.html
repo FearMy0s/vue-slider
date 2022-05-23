@@ -23,7 +23,6 @@
         <div class="thumbs">
             <div class="thumbs" @mouseover="stop()" @mouseleave="start()">
                 <div class="prev" @click="up()"></div>
-
                 <div class="thumb" v-for="(image, Index) in images" :class="{'active' : index === Index}" @click="selectedImage(Index)">
                     <img :src="image.src">
                 </div> 
@@ -32,7 +31,6 @@
         </div>      
         </div>
    </div>
-
    <script src="js/main.js"></script>
 </body>
 </html>
